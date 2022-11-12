@@ -1,0 +1,2 @@
+hi="jom"
+print(hi)
