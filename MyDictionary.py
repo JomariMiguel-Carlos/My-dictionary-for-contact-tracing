@@ -3,7 +3,10 @@ print ("**********  CARLOS, JOMARI MIGUEL  **********")
 print ("**********        BSCOE 2-2        **********")
 print ("********** Sir Danilo Madrigalejos **********")
 
-details={}
+details={
+    "jm" : 21,
+    "jom" :22
+}
 
 print (details.keys())
 def menu():
@@ -17,16 +20,25 @@ def exit():
 
 while True:
     menu()
-    choice = int(input("\n What do you want to do?"))
+    choice = int(input("\n What do you want to do? "))
 
     if choice == 1:
         name = input("Enter name: ")
-        age = int(input("Enter age: "))
         loc = input("Where are you from?: ")
-        phone = int(input("Enter contact number: "))
-        details=[[name],[age],[loc],[phone]]
-        details.append([[name],[age],[loc],[phone]])
-        print(details)
+        try:
+            age = int(input("Enter age: "))
+            phone = int(input("Enter contact number: "))
+        except ValueError:
+            print("Invalid, Try again")
+        else:
+            details[name] = {
+                "Age: ",age,
+                "Address: ", loc,
+                "Contact number: ", phone
+            }
+            print("Saved!")
+
+
 
     elif choice == 2:
         name = input("Enter name: ")
