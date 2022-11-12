@@ -3,24 +3,20 @@ print ("**********  CARLOS, JOMARI MIGUEL  **********")
 print ("**********        BSCOE 2-2        **********")
 print ("********** Sir Danilo Madrigalejos **********")
 
-details={
-    "jm" : 21,
-    "jom" :22
-}
+details={}
 
-print (details.keys())
 def menu():
-    print("Welcome to contact Tracing")
+    print("\nWelcome to contact Tracing")
     print("1 -> Add contact")
     print("2 -> Search contact")
-    print("3 -> Exit (y/n)")
+    print("3 -> Exit")
 
 def exit():
     print("Thank you for using this code!")
 
 while True:
     menu()
-    choice = int(input("\n What do you want to do? "))
+    choice = int(input("\nWhat do you want to do? "))
 
     if choice == 1:
         name = input("Enter name: ")
@@ -32,25 +28,29 @@ while True:
             print("Invalid, Try again")
         else:
             details[name] = {
-                "Age: ",age,
-                "Address: ", loc,
-                "Contact number: ", phone
+                "Age: ": age,
+                "Address: ": loc,
+                "Contact number: ": phone
             }
             print("Saved!")
-
+            print(details)
 
 
     elif choice == 2:
-        name = input("Enter name: ")
-        age = int(input("Enter age: "))
-        loc = input("Where are you from?: ")
-        phone = int(input("Enter contact number: "))
-        details[roll] = [[name], [age], [loc], [phone]]
+        find = input("Enter full name of your target name: ")
+        if find in details:
+            print("\nI've found out that", find, "is here in your list")
+            for key, value in details[find].items():
+                print(key,value)
+        else:
+            print("Invalid")
 
     elif choice == 3:
-        print("Thank you for using this program!")
         exit()
         break
 
     else:
         print("Invalid, try again")
+
+
+
