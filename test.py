@@ -1,2 +1,0 @@
-hi="jom"
-print(hi)
